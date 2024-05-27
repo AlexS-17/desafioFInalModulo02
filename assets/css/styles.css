@@ -1,0 +1,91 @@
+/* Mobile First */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Colores */
+:root {
+    --color-principal: #ffffff;
+    --color-secondary: black;
+    --color-tertiary: #ffe926;
+    --color-icon: #79081b;
+    --color-titles: #222222;
+    --color-subtitle: #888;
+    --color-text: #555;
+}
+
+/* Fuente Need for Speed */
+@font-face {
+    font-family: 'NFS';
+    src: url('../fonts/NFS_by_JLTV.ttf') format('truetype');
+}
+
+
+/* Grid template para definir la estructura de la página */
+body {
+    height: 100vh;
+    font-family: 'roboto', sans-serif;
+    display: grid;
+    grid-template-rows: 1fr 10fr 1fr;  
+    grid-template-areas:   
+        "navbar"
+        "container"
+        "footer";
+    background-color: black;
+}
+
+.container__title {
+    display: flex;
+    justify-content: center;
+    font-family: 'NFS';
+    font-size: 30px;
+    padding: 5px;
+    color: #ff0000; /* Color rojo */
+    font-size: 2em;
+
+
+}
+
+.container__title:hover {
+    color: #ccff14; 
+    transition: .5s ease-in-out;
+    text-shadow: 
+        0 0 2px #39ff14, 
+        0 0 5px #39ff14, 
+        0 0 10px #39ff14, 
+        0 0 20px #0fa;
+}
+
+.navbar {
+    grid-area: navbar;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.container {
+    grid-area: container;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/* Media query que define la estructura de la página en pantallas más grandes */
+@media (min-width: 576px)  {
+    body {
+        display: grid;
+        grid-template-columns: 8rem 1fr;
+        grid-template-areas: 
+            "navbar container"
+            "sidebar container"
+            "footer container";
+    }
+
+    .container__title {
+        justify-content: center;
+    }
+}
